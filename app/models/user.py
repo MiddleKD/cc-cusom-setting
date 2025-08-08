@@ -26,3 +26,5 @@ class MessageRequest(BaseModel):
 class MessageResponse(BaseModel):
     message: str
     timestamp: datetime
+    author: Optional[str] = None
+    organization: Optional[str] = None

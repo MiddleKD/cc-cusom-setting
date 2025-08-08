@@ -7,5 +7,7 @@ class HelloService:
     def hello_world(self, message: str = "Hello World!") -> MessageResponse:
         return MessageResponse(
             message=message,
-            timestamp=datetime.now()
+            timestamp=datetime.now(),
+            author="System",
+            organization="Vibe Kanban"
         )

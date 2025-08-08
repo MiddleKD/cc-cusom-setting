@@ -22,7 +22,13 @@ app.add_exception_handler(Exception, general_exception_handler)
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World API", "docs": "/docs", "redoc": "/redoc"}
+    return {
+        "message": "Hello World API", 
+        "docs": "/docs", 
+        "redoc": "/redoc",
+        "author": "System",
+        "organization": "Vibe Kanban"
+    }
 
 app.include_router(hello.router)
 app.include_router(users.router)
