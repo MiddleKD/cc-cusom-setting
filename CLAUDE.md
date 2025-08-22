@@ -1,1 +1,1 @@
-Additional Instructions @../../../Desktop/lib/test.md
+THINK IN ENGLISH RESPONSE IN KOREAN
