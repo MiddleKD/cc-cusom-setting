@@ -8,14 +8,6 @@
       ],
       "env": {}
     },
-    "playwright": {
-      "type": "stdio",
-      "command": "npx",
-      "args": [
-        "@playwright/mcp@latest"
-      ],
-      "env": {}
-    },
     "fetch": {
       "type": "stdio",
       "command": "uvx",
@@ -35,6 +27,14 @@
         "MEMORY_FILE_PATH": "/home/middlek/lib/study/claude_code/memory.json"
       }
     },
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ],
+      "env": {}
+    },
     "sequential-thinking": {
       "type": "stdio",
       "command": "npx",
@@ -42,6 +42,10 @@
         "@modelcontextprotocol/server-sequential-thinking"
       ],
       "env": {}
+    },
+    "webhook": {
+      "type": "sse",
+      "url": "http://127.0.0.1:8788/sse"
     }
   }
 }
