@@ -5,6 +5,16 @@ build/
 dist/
 wheels/
 *.egg-info
+logs
 
 # Virtual environments
 .venv
+
+.claude/*
+!.claude/agents
+!.claude/commands
+!.claude/hooks
+!.claude/skills
+!.claude/output-styles
+!.claude/status_lines
+!.claude/settings.json
