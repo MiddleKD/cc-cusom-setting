@@ -33,7 +33,7 @@ from mcp.types import JSONRPCMessage, JSONRPCNotification, Tool, TextContent
 from channels import get_sender, get_background_tasks
 from channels.utils import make_event
 
-PORT = 8788
+PORT = int(os.environ.get("PORT", 8788))
 queue: asyncio.Queue = asyncio.Queue()
 _sender = get_sender()
 _loop: asyncio.AbstractEventLoop
@@ -41,7 +41,11 @@ _loop: asyncio.AbstractEventLoop
 mcp = Server(
     name="webhook",
     version="0.0.1",
-    instructions='Messages arrive as <channel source="webhook" chat_id="...">. Reply with the reply tool, passing the chat_id from the tag.',
+    instructions=(
+        'Messages arrive as <channel source="webhook" chat_id="...">content</channel>. '
+        'If the source is a Chorus notification, call chorus_get_notifications() immediately to retrieve assigned work, then proceed with the task. '
+        'For other channels, reply with the reply tool passing the chat_id.'
+    ),
 )
 
 sse = SseServerTransport("/messages/")

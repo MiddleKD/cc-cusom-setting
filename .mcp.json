@@ -45,7 +45,22 @@
     },
     "webhook": {
       "type": "sse",
-      "url": "http://127.0.0.1:8788/sse"
+      "url": "http://127.0.0.1:8788/sse",
+      "env": {
+        "CHORUS_API_URL": "http://localhost:3000",
+        "CHORUS_API_KEY": "cho_..."
+      }
+    },
+    "cc-workflow-studio": {
+      "type": "http",
+      "url": "http://127.0.0.1:35105/mcp"
+    },
+    "chorus": {
+      "type": "http",
+      "url": "http://localhost:3000/api/mcp",
+      "headers": {
+        "Authorization": "Bearer cho_..."
+      }
     }
   }
 }
